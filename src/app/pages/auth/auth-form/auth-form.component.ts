@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-auth-form',
-  templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.css']
+    selector: 'app-auth-form',
+    templateUrl: './auth-form.component.html',
+    styleUrls: ['./auth-form.component.css'],
+    standalone: false
 })
 export class AuthFormComponent implements OnInit {
 
