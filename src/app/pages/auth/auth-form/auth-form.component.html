@@ -1,0 +1,58 @@
+<section class="auth-container">
+  <header class="auth-logo">
+    <lucide-angular name="dollar-sign" size="22"></lucide-angular>
+    <span class="auth-brand">dashcash</span>
+  </header>
+
+  <div class="auth-cta">
+    <h2 class="auth-title">
+      {{ type === 'login' ? 'Entre em sua conta' : 'Crie sua conta' }}
+    </h2>
+    <p class="auth-switch">
+      {{ type === 'login' ? 'Novo por aqui?' : 'Já possui uma conta?' }}
+      <button
+        type="button"
+        (click)="verifyAccount()"
+        class="auth-switch-button"
+      >
+        {{ type === 'login' ? 'Crie uma conta' : 'Fazer login' }}
+      </button>
+    </p>
+  </div>
+
+  <form class="auth-form">
+    <div class="form-group" *ngIf="type === 'register'">
+      <label for="name" class="form-label">Nome</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-input"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-input"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password" class="form-label">Senha</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-input"
+      />
+    </div>
+
+    <button type="submit" class="form-submit-button">
+      {{ type === 'login' ? 'Entrar' : 'Cadastrar' }}
+    </button>
+  </form>
+</section>

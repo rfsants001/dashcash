@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  width: 1380px;
+  padding: 20px;
+}
+.form {
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+}

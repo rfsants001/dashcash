@@ -1,0 +1,114 @@
+/* Reset básico moderno */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+html, body {
+  height: 100%;
+  background-color: #f8f9fa; /* Cor de fundo da tela de login */
+  font-family: 'Inter', sans-serif;
+  color: #1c1c1c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Import da fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Variáveis de tema */
+:root {
+  --color-primary: #007f5f;
+  --color-primary-hover: #00664c;
+  --color-danger: #d00000;
+  --color-success: #2f9e44;
+  --color-bg: #f8f9fa;
+  --color-card: #ffffff;
+  --color-muted: #6c757d;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Containers */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+}
+
+/* Inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: var(--radius);
+  background-color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Botão principal */
+button,
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para cards */
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* Estilo texto mutado */
+.text-muted {
+  color: var(--color-muted);
+}
+
+/* Estilo valores */
+.value-success {
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.value-danger {
+  color: var(--color-danger);
+  font-weight: 500;
+}
