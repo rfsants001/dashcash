@@ -1,10 +1,101 @@
 <div class="container">
-  <app-auth-form class="form"></app-auth-form>
+  <div class="form">
+    <app-auth-form></app-auth-form>
+  </div>
+
   <div class="hero">
+    <div class="card">
+      <header class="card-header">
+        <div class="transaction-filter">
+          <lucide-angular name="banknote" size="26"></lucide-angular>
+          <span>Transactions</span>
+          <lucide-angular name="chevron-down" size="26"></lucide-angular>
+        </div>
+        <lucide-angular name="funnel" size="28"></lucide-angular>
+      </header>
+
+      <div class="card-body">
+        <div class="month-filter">
+          <lucide-angular name="chevron-left" size="26"></lucide-angular>
+
+          <div class="months">
+            <div class="month">
+              April
+            </div>
+            <div class="month month-selected">
+              May
+              </div>
+            <div class="month">
+              June
+            </div>
+          </div>
+
+          <lucide-angular name="chevron-right" size="26"></lucide-angular>
+        </div>
+
+        <div class="transaction-list">
+          <div class="transaction">
+            <div class="transaction-detail">
+              <lucide-angular name="utensils" size="22" class="transaction-icon grocery"></lucide-angular>
+              <div class="transaction-info">
+                <span class="description">Breakfast</span>
+                <span class="date">04/06/2023</span>
+              </div>
+            </div>
+            <div class="transaction-value expense">
+              -$ 123,00
+            </div>
+          </div>
+
+          <div class="transaction">
+            <div class="transaction-detail">
+              <lucide-angular name="wallet" size="22" class="transaction-icon salary"></lucide-angular>
+              <div class="transaction-info">
+                <span class="description">Salary</span>
+                <span class="date">10/06/2023</span>
+              </div>
+            </div>
+            <div class="transaction-value outcome">
+              +$ 123,00
+            </div>
+          </div>
+
+          <div class="transaction">
+            <div class="transaction-detail">
+              <lucide-angular name="clapperboard" size="22" class="transaction-icon fun"></lucide-angular>
+              <div class="transaction-info">
+                <span class="description">Cinema</span>
+                <span class="date">10/06/2023</span>
+              </div>
+            </div>
+            <div class="transaction-value expense">
+              -$ 400,00
+            </div>
+          </div>
+
+           <div class="transaction">
+            <div class="transaction-detail">
+              <lucide-angular name="briefcase-business" size="22" class="transaction-icon work"></lucide-angular>
+              <div class="transaction-info">
+                <span class="description">Freelancer</span>
+                <span class="date">30/06/2023</span>
+              </div>
+            </div>
+            <div class="transaction-value outcome">
+              +$ 4000,00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="hero-footer">
-      <div class="hero-footer_text">
-        <lucide-angular name="dollar-sign"></lucide-angular>
+      <div class="icon-footer">
+        <lucide-angular name="credit-card"></lucide-angular>
         <span>dashcash</span>
+      </div>
+      <div class="footer">
+        <span>Manage your personal finances in a simple way with fincheck, and best of all, completely free!</span>
       </div>
     </div>
   </div>

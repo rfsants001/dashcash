@@ -1,3 +1,5 @@
+
+@import './colors.css';
 /* Reset básico moderno */
 * {
   margin: 0;
@@ -20,20 +22,13 @@ html, body {
 
 /* Variáveis de tema */
 :root {
-  --color-primary: #007f5f;
-  --color-primary-hover: #00664c;
-  --color-danger: #d00000;
-  --color-success: #2f9e44;
-  --color-bg: #f8f9fa;
-  --color-card: #ffffff;
-  --color-muted: #6c757d;
-  --radius: 8px;
+  --radius: 10px;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Containers */
 .container {
-  max-width: 1120px;
+  max-width: 80vw;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -49,23 +44,39 @@ input[type="password"],
 input[type="text"] {
   width: 100%;
   padding: 0.75rem 1rem;
+  padding-left: 3rem;
   border: 1px solid #ced4da;
   border-radius: var(--radius);
   background-color: #fff;
   font-size: 1rem;
   transition: border-color 0.2s;
+  outline: none;
+  transition: .5s ease;
 }
 
-input:focus {
+input.error {
+  border-color: var(--color-red-600);
+}
+
+input.error:focus,
+input.error:hover {
+  border-color: var(--color-red-600);
   outline: none;
-  border-color: var(--color-primary);
+}
+
+
+input:focus, input:hover {
+  outline: none;
+  border-color: var(--color-teal-700);
+  background-color: #fff;
+  box-shadow: 0 0 0 5px rgb(0 127 95 / 13%);
 }
 
 /* Botão principal */
 button,
 .btn {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-primary);
+  padding: 1rem 1.5rem;
+  background-color: var(--color-teal-700);
   color: white;
   border: none;
   border-radius: var(--radius);
@@ -76,13 +87,14 @@ button,
 
 button:hover,
 .btn:hover {
-  background-color: var(--color-primary-hover);
+  background-color: var(--color-teal-900);
 }
 
 /* Links */
 a {
-  color: var(--color-primary);
+  color: var(--color-teal-700);
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -91,24 +103,13 @@ a:hover {
 
 /* Estilo para cards */
 .card {
-  background: var(--color-card);
+  background: var(--color-gray-600);
   border-radius: var(--radius);
   padding: 1rem;
   box-shadow: var(--shadow);
 }
 
-/* Estilo texto mutado */
-.text-muted {
-  color: var(--color-muted);
-}
 
-/* Estilo valores */
-.value-success {
-  color: var(--color-success);
-  font-weight: 500;
-}
-
-.value-danger {
-  color: var(--color-danger);
-  font-weight: 500;
+.icon {
+  filter: brightness(2);
 }

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './core/services/interceptors/auth.interceptor';
-import { DollarSign, LucideAngularModule } from 'lucide-angular';
+import { Banknote, BriefcaseBusiness, ChevronDown, ChevronLeft, ChevronRight, Clapperboard, CreditCard, Funnel, KeyRound, LucideAngularModule, Mail, User, Utensils, Wallet } from 'lucide-angular';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthFormComponent } from './pages/auth/auth-form/auth-form.component';
 import { SplashComponent } from './pages/splash/splash.component';
@@ -22,7 +22,20 @@ import { SplashComponent } from './pages/splash/splash.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    LucideAngularModule.pick({DollarSign}),
+    LucideAngularModule.pick({
+      CreditCard,
+      User,
+      Mail,
+      KeyRound,
+      Banknote,
+      ChevronDown,
+      ChevronLeft,
+      ChevronRight,
+      Funnel,
+      Utensils,
+    Wallet,
+    Clapperboard,
+  BriefcaseBusiness}),
     BrowserAnimationsModule
   ],
   providers: [{

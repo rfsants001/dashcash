@@ -1,58 +1,60 @@
-<section class="auth-container">
+<section class="auth-login-container">
   <header class="auth-logo">
-    <lucide-angular name="dollar-sign" size="22"></lucide-angular>
+    <lucide-angular name="credit-card" size="28"></lucide-angular>
     <span class="auth-brand">dashcash</span>
   </header>
 
   <div class="auth-cta">
     <h2 class="auth-title">
-      {{ type === 'login' ? 'Entre em sua conta' : 'Crie sua conta' }}
+      {{ type === 'login' ? 'Log in to your account' : 'Create your account' }}
     </h2>
     <p class="auth-switch">
-      {{ type === 'login' ? 'Novo por aqui?' : 'Já possui uma conta?' }}
-      <button
-        type="button"
+      {{ type === 'login' ? 'New here?' : 'Already have an account?' }}
+      <a
         (click)="verifyAccount()"
         class="auth-switch-button"
       >
-        {{ type === 'login' ? 'Crie uma conta' : 'Fazer login' }}
-      </button>
+        {{ type === 'login' ? 'Create an account' : 'Log in' }}
+    </a>
     </p>
   </div>
 
   <form class="auth-form">
     <div class="form-group" *ngIf="type === 'register'">
-      <label for="name" class="form-label">Nome</label>
+      <lucide-angular class="icon" name="user" size="24"></lucide-angular>
       <input
         type="text"
         id="name"
         name="name"
         class="form-input"
+        placeholder="Name"
       />
     </div>
 
     <div class="form-group">
-      <label for="email" class="form-label">E-mail</label>
+      <lucide-angular class="icon"  name="mail" size="24"></lucide-angular>
       <input
         type="email"
         id="email"
         name="email"
         class="form-input"
+        placeholder="Email"
       />
     </div>
 
     <div class="form-group">
-      <label for="password" class="form-label">Senha</label>
+      <lucide-angular class="icon"  name="key-round" size="24"></lucide-angular>
       <input
         type="password"
         id="password"
         name="password"
         class="form-input"
+        placeholder="Password"
       />
     </div>
 
     <button type="submit" class="form-submit-button">
-      {{ type === 'login' ? 'Entrar' : 'Cadastrar' }}
+      {{ type === 'login' ? 'Log in' : 'Sign up' }}
     </button>
   </form>
 </section>

@@ -1,12 +1,190 @@
 .container {
   display: flex;
-  width: 1380px;
-  padding: 20px;
+  height: 100vh;
+  margin-bottom: 0;
 }
 .form {
   width: 100%;
+  margin: auto 0;
 }
 
 .hero {
   width: 100%;
+
+  background: var(--color-teal-100);
+
+  border-radius: 32px 32px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+}
+
+.hero .card{
+  width: 80%;
+  background-color: var(--color-gray-100);
+  border-top: 22px solid var(--color-white);
+  border-right: 22px solid var(--color-white);
+  border-radius: 0 32px 0 0;
+
+  overflow: visible;
+  position: relative;
+}
+
+.card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.card-header .transaction-filter {
+  display: flex;
+  align-items: center;
+
+  gap: 10px
+}
+
+.transaction-filter span {
+  font-size: 16px;
+}
+
+.card-body {
+  padding: 1rem 2rem;
+}
+
+.card-body .month-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 0;
+}
+
+.month-filter .months {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.month {
+  padding: 1rem 3rem;
+  border-radius: 32px;
+}
+
+.month.month-selected {
+  background: var(--color-white);
+}
+
+.transaction-list {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  position: relative;
+  top: 20px;
+  right: 10px;
+  z-index: 1;
+}
+
+.transaction-list .transaction {
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 2rem;
+}
+
+.transaction-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-detail .transaction-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transaction-icon.salary {
+  color: var(--color-green-900);
+  background-color: var(--color-green-100);
+}
+
+.transaction-icon.grocery {
+  color: var(--color-red-900);
+  background-color: var(--color-red-100);
+}
+
+.transaction-icon.fun {
+  color: var(--color-violet-500);
+  background-color: var(--color-violet-100);
+}
+
+.transaction-icon.work {
+  color: var(--color-fuchsia-500);
+  background-color: var(--color-fuchsia-100);
+}
+
+
+.transaction-info .description {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.transaction-info .date {
+  font-size: 14px;
+  color: var(--color-gray-600);
+}
+
+.transaction-value {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.transaction-value.expense {
+  color: var(--color-red-700);
+}
+
+.transaction-value.outcome {
+  color: var(--color-green-700);
+}
+
+.hero-footer {
+  background: var(--color-white);
+
+  padding: 2rem;
+}
+
+.icon-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--color-teal-700);
+
+  margin-bottom: 1rem;
+}
+
+.icon-footer span {
+  font-size: 22px;
+}
+
+.footer {
+  font-size: 20px;
 }

@@ -1,19 +1,25 @@
-.auth-container {
-  width: 100%;
+.auth-login-container {
+  max-width: 500px;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
-.auth-container .auth-logo {
+.auth-login-container .auth-logo {
   display: flex;
+  align-items: center;
+
   gap: 8px;
   color: #adb5bd;
+
+  margin-bottom: 4rem;
 }
 
-.container .auth-brand {
+span.auth-brand {
   font-size: 22px;
 }
 
@@ -21,6 +27,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 2rem;
 }
 
 .auth-cta .auth-title {
@@ -29,7 +36,11 @@
 }
 
 .auth-cta .auth-switch {
-  font-size: 14px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .auth-switch button {
@@ -43,9 +54,23 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .auth-form .form-group {
+  width: 100%;
+  display: flex;
+  line-height: 30px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.form-group .icon {
+  position: absolute;
+  left: 1rem;
+  fill: none;
+}
+
+.form-group input {
   width: 100%;
 }
