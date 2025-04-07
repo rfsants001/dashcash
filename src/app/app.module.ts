@@ -6,10 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AuthInterceptor } from './core/services/interceptors/auth.interceptor';
-import { Banknote, BriefcaseBusiness, ChevronDown, ChevronLeft, ChevronRight, Clapperboard, CreditCard, Funnel, KeyRound, LucideAngularModule, Mail, User, Utensils, Wallet } from 'lucide-angular';
+import { BadgeAlert, Banknote, BriefcaseBusiness, ChevronDown, ChevronLeft, ChevronRight, Clapperboard, CreditCard, Funnel, KeyRound, LucideAngularModule, Mail, User, Utensils, Wallet } from 'lucide-angular';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthFormComponent } from './pages/auth/auth-form/auth-form.component';
 import { SplashComponent } from './pages/splash/splash.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -19,6 +20,7 @@ import { SplashComponent } from './pages/splash/splash.component';
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
+        ReactiveFormsModule,
         LucideAngularModule.pick({
             CreditCard,
             User,
@@ -32,7 +34,8 @@ import { SplashComponent } from './pages/splash/splash.component';
             Utensils,
             Wallet,
             Clapperboard,
-            BriefcaseBusiness
+            BriefcaseBusiness,
+            BadgeAlert
         }),
         BrowserAnimationsModule], providers: [{
             provide: HTTP_INTERCEPTORS,

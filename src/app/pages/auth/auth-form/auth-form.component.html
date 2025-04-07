@@ -6,55 +6,110 @@
 
   <div class="auth-cta">
     <h2 class="auth-title">
-      {{ type === 'login' ? 'Log in to your account' : 'Create your account' }}
+      {{ typeRote() === 'login' ? 'Log in to your account' : 'Create your account' }}
     </h2>
     <p class="auth-switch">
-      {{ type === 'login' ? 'New here?' : 'Already have an account?' }}
+      {{ typeRote() === 'login' ? 'New here?' : 'Already have an account?' }}
       <a
         (click)="verifyAccount()"
         class="auth-switch-button"
       >
-        {{ type === 'login' ? 'Create an account' : 'Log in' }}
+        {{ typeRote() === 'login' ? 'Create an account' : 'Log in' }}
     </a>
     </p>
   </div>
 
-  <form class="auth-form">
-    <div class="form-group" *ngIf="type === 'register'">
-      <lucide-angular class="icon" name="user" size="24"></lucide-angular>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        class="form-input"
-        placeholder="Name"
-      />
+  <form [formGroup]="authForm" class="auth-form">
+    <div class="form-group" *ngIf="typeRote() === 'register'">
+      <div class="form-input">
+        <lucide-angular class="icon" name="user" size="24"></lucide-angular>
+        <input
+          formControlName="name"
+          type="text"
+          id="name"
+          name="name"
+          class="form-input"
+          placeholder="Name"
+        />
+      </div>
+
+      @if (name?.invalid && name?.touched){
+        <div class="alert">
+
+          @if (name?.hasError('required')) {
+            <div class="alert-item">
+              <lucide-angular name="badge-alert" size="16"></lucide-angular>
+              Name is required
+            </div>
+          }
+        </div>
+      }
     </div>
 
     <div class="form-group">
-      <lucide-angular class="icon"  name="mail" size="24"></lucide-angular>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        class="form-input"
-        placeholder="Email"
-      />
+      <div class="form-input">
+        <lucide-angular class="icon"  name="mail" size="24"></lucide-angular>
+        <input
+          formControlName="email"
+          type="email"
+          id="email"
+          name="email"
+          class="form-input"
+          placeholder="Email"
+        />
+      </div>
+      @if (email?.invalid && email?.touched){
+        <div class="alert">
+          @if (email?.hasError('required')) {
+            <div class="alert-item">
+              <lucide-angular name="badge-alert" size="16"></lucide-angular>
+              Email is required
+            </div>
+          }
+          @if (email?.hasError('email')) {
+            <div class="alert-item">
+              <lucide-angular name="badge-alert" size="16"></lucide-angular>
+              Invalid email format
+            </div>
+          }
+        </div>
+      }
     </div>
 
     <div class="form-group">
-      <lucide-angular class="icon"  name="key-round" size="24"></lucide-angular>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        class="form-input"
-        placeholder="Password"
-      />
+      <div class="form-input">
+        <lucide-angular class="icon"  name="key-round" size="24"></lucide-angular>
+        <input
+          formControlName="password"
+          type="password"
+          id="password"
+          name="password"
+          class="form-input"
+          placeholder="Password"
+        />
+      </div>
+
+      @if (password?.invalid && password?.touched){
+        <div class="alert">
+
+          @if (password?.hasError('required')) {
+            <div class="alert-item">
+              <lucide-angular name="badge-alert" size="16"></lucide-angular>
+              Password is required
+            </div>
+          }
+          @if (password?.hasError('minlength')) {
+            <div class="alert-item">
+              <lucide-angular name="badge-alert" size="16"></lucide-angular>
+              Password must be at least 8 characters
+            </div>
+          }
+        </div>
+      }
     </div>
 
-    <button type="submit" class="form-submit-button">
-      {{ type === 'login' ? 'Log in' : 'Sign up' }}
+    <button type="submit" class="form-submit-button" (click)="onSubmit()">
+      {{ typeRote() === 'login' ? 'Log in' : 'Sign up' }}
     </button>
   </form>
 </section>

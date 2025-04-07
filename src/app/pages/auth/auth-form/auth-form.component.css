@@ -57,7 +57,14 @@ span.auth-brand {
   gap: 32px;
 }
 
-.auth-form .form-group {
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.form-group .form-input {
   width: 100%;
   display: flex;
   line-height: 30px;
@@ -65,12 +72,30 @@ span.auth-brand {
   justify-content: center;
   position: relative;
 }
-.form-group .icon {
+
+.form-input .icon {
   position: absolute;
   left: 1rem;
   fill: none;
+  z-index: 1;
 }
 
-.form-group input {
+.form-input input {
   width: 100%;
+}
+
+
+//VALIDATORS
+
+.alert {
+  width: 100%;
+}
+
+.alert .alert-item {
+  color: var(--color-red-600);
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

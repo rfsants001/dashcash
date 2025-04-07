@@ -7,12 +7,14 @@ import { Router } from '@angular/router';
     templateUrl: './splash.component.html',
     styleUrls: ['./splash.component.css'],
     animations: [
-        trigger('slideIn', [
-            transition(':enter', [
-                style({ opacity: 0, transform: 'translateX(-10px)' }),
-                animate('600ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
-            ])
-        ])
+         trigger('slideInAndOut', [
+    transition(':enter', [
+      style({ opacity: 0, transform: 'translateX(-20px)' }),
+      animate('600ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+      animate('2800ms', style({ opacity: 1, transform: 'translateX(0)' })),
+      animate('600ms ease-in', style({ opacity: 0, transform: 'translateX(-10px)' }))
+    ])
+  ])
     ],
     standalone: false
 })

@@ -17,15 +17,11 @@ export class AuthService {
   constructor(private api: ApiService, private router: Router) { }
 
   login(email: string, password: string) {
-    return this.api.post('auth/signin', { email, password }).subscribe((response: any) => {
-      this.setToken(response.token)
-    });
+    return this.api.post('auth/signin', { email, password });
   }
 
   singup(name:string, email: string, password: string) {
-    return this.api.post('auth/signup', {name, email, password }).subscribe((response: any) => {
-      this.setToken(response.token);
-    });
+    return this.api.post('auth/signup', {name, email, password });
   }
 
   logout() {
